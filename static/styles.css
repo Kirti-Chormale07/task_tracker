@@ -1,0 +1,162 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #17212b;
+  background: #edf4f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(100%, 650px);
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: clamp(24px, 6vw, 48px);
+  box-shadow: 0 18px 60px #1730421a;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #137c71;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  letter-spacing: -0.055em;
+}
+
+.intro {
+  margin: 0 0 28px;
+  color: #5d6975;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+}
+
+input:not([type="checkbox"]) {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #cbd8d6;
+  border-radius: 10px;
+  padding: 13px;
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 15px;
+  background: #137c71;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0b6058;
+}
+
+.message {
+  min-height: 1.3em;
+  color: #b42318;
+  margin: 10px 0 0;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #e4eceb;
+  margin-top: 22px;
+}
+
+.list-header h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.list-header span {
+  color: #60706f;
+  font-size: 0.87rem;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #edf1f0;
+}
+
+.task-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 18px;
+  height: 18px;
+  accent-color: #137c71;
+}
+
+.task.done .title {
+  color: #7b8988;
+  text-decoration: line-through;
+}
+
+.delete {
+  padding: 6px 9px;
+  background: transparent;
+  color: #a33b35;
+  font-size: 0.83rem;
+}
+
+.delete:hover {
+  background: #fff1f0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@media (max-width: 440px) {
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-form button {
+    width: 100%;
+  }
+}

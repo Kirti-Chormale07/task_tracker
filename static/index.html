@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="card" aria-labelledby="page-title">
+        <p class="eyebrow">DAILY FOCUS</p>
+        <h1 id="page-title">Task Tracker</h1>
+        <p class="intro">Keep a small, clear list of what matters today.</p>
+
+        <form id="task-form" class="task-form">
+          <label class="sr-only" for="task-title">New task</label>
+          <input
+            id="task-title"
+            maxlength="120"
+            placeholder="What needs doing?"
+            required
+          />
+          <button type="submit">Add task</button>
+        </form>
+
+        <p id="message" class="message" role="status"></p>
+
+        <div class="list-header">
+          <h2>Your tasks</h2>
+          <span id="task-count">0 remaining</span>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <template id="task-template">
+      <li class="task">
+        <label class="task-label">
+          <input class="toggle" type="checkbox" />
+          <span class="title"></span>
+        </label>
+        <button class="delete" type="button" aria-label="Delete task">
+          Delete
+        </button>
+      </li>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
